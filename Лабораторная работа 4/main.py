@@ -49,11 +49,11 @@ class Warrior:
 
     def __str__(self) -> str:
         """Возвращает строковое представление воина"""
-        return f"Имя: {self.name}. Здоровье: {self.__health}. Статус: {'Жив' if self.is_alive() else 'Мёртв'}."
+        return f"Имя: {self.name}. Здоровье: {self.health}. Статус: {'Жив' if self.is_alive() else 'Мёртв'}."
 
     def __repr__(self) -> str:
         """Возвращает представление воина"""
-        return f"{self.__class__.__name__}({self.name!r}, {self.__health}, {self.damage})"
+        return f"{self.__class__.__name__}({self.name!r}, {self.health}, {self.damage})"
 
 
 class Archer(Warrior):
@@ -90,7 +90,7 @@ class Archer(Warrior):
             self.__arrows -= 1
 
     @property
-    def arrows(self):
+    def arrows(self) -> int:
         """Возвращает текущее количество стрел"""
         return self.__arrows
 
